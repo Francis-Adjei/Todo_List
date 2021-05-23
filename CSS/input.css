@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body div .nav{
+    font-size: 25px;
+ }
+
+#header {
+    
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0 1rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 3rem;
+    
+    
+}
+
+#title {
+    border-right: solid 3px teal;
+    white-space: pre;
+    overflow: hidden;     
+    letter-spacing: 0.20rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    
+  }
+
+  #title {
+    animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
+        animated-cursor 750ms steps(11,end) infinite;
+  }
+
+ 
+
+  @keyframes animated-text{
+    from{width: 0%;}
+    to{width: 480px;}
+  }
+
+  .nav-link{
+    flex: 1;
+}
+.nav-link ul{
+    margin-left: 50px;
+    display: inline;
+}
+.nav-link ul li{
+     list-style: none;
+     display: inline-block;
+     padding: 8px 25px;
+}
+.nav-link a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+     
+}
+.nav-link ul li::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    background: blueviolet;
+    display: block;
+    margin: auto;
+    transition: .8s;
+}
+.nav-link ul li:hover::after{
+    width: 100%;
+}
+
+.form{
+    width: 50%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.form input{
+    width: 100%;
+    height: 100%;
+    color:#595f6e ;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+}
+
+.form label{
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+.form label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid blueviolet;
+    transform: translate(-100%); 
+    transition: transform 0.3s ease;
+}
+.content-name{
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+.form input:focus + .label-name .content-name, 
+.form input:valid + .label-name .content-name{
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: blueviolet;
+}
+
+.form input:focus  + .label-name::after,
+.form input:valid + .label-name::after{
+   transform: translateX(0%);
+}
+
+.submit{
+  margin-top: 15px;
+  width: 50px;
+  height: 20px;
+  
+}
+
+.submit input{
+    float: right;
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 200%;
+    border-radius: 10px;
+    color: black;
+    
+}
+.submit input[type = "submit"]:hover{
+  color: white;
+    background-color: blueviolet;
+}
+

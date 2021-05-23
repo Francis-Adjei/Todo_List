@@ -1,0 +1,70 @@
+
+#header{
+    background: linear-gradient(90deg, rgb(99, 22, 177) 0%, rgb(194, 171, 70) 50%, rgb(116, 130, 192) 100%);
+}
+
+.done-list{
+    position: relative; 
+    background: #fff;
+    width: 350px;
+}
+.done-list ul{
+    position: relative;
+    padding: 20px;
+}
+.done-list ul li{
+   position: relative;
+   list-style: none; 
+   padding: 15px 0;
+   border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.done-list ul li:last-child{
+    border-bottom: none;
+}
+.done-list ul li label{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.done-list ul li label input{
+    visibility: hidden;
+    appearance: none;
+}
+.done-list ul li label p{
+    position: absolute;
+}
+.done-list ul li label span{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.done-list ul li label span::before{
+    content: "";
+    position: absolute;
+    top: 5px;
+    width: 10px;
+    height: 5px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    transform: rotate(-40deg);
+
+}
+.done-list ul li label input:checked ~ p{
+    text-decoration: line-through blueviolet;
+    color: #ccc;    
+}
+.done-list ul li label input:checked ~ span{
+    background: blueviolet;
+    border: 1px solid blueviolet ;
+}
+.done-list ul li label input:checked ~ span:before{
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
